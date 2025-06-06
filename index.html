@@ -1,133 +1,268 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Bookstore</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="The homepage for My Bookstore" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chapter &amp; Quill - Welcome</title>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .hero {
+      background: url('images/site/hero_book.png') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      font-family: Georgia, serif;
+      position: relative;
+    }
 
-    <!-- Import font-awesome icons -->
-    <link
-      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
-      rel="stylesheet"
-    />
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 12px;
+    }
 
-    <!-- order of CSS files is important (this is the "Cascade" part of CSS) -->
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
 
-    <!-- global.css contains resets, custom properties, and utility classes -->
-    <link rel="stylesheet" href="css/global.css" />
+    .cta-button {
+      background: linear-gradient(to right, #8B2E3C, #B76E79);
+      color: white;
+      padding: 18px 36px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: Georgia, serif;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
 
-    <!-- start from the top-level component and work your way down -->
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/app-header.css" />
-    <link rel="stylesheet" href="css/header-dropdown.css" />
-    <link rel="stylesheet" href="css/app-footer.css" />
-    <link rel="stylesheet" href="css/home.css" />
-  </head>
+    .cta-button:hover {
+      background: linear-gradient(to right, #B76E79, #8B2E3C);
+      transform: scale(1.05);
+    }
 
-  <body>
-    <main>
-      <header class="container">
-        <section class="bookstore-logo">
-          <a href="index.html">
-            <img
-              src="images/site/bookstore-logo.png"
-              alt="Another Bookstore Logo"
-              width="150px"
-              height="auto"
-            />
-          </a>
-        </section>
-        <section class="title-and-search-bar">
-          <h1 class="text-logo">Another Bookstore</h1>
-          <form action="category.html">
-            <input type="text" class="search-bar" /><br />
-            <input type="submit" class="button search-button" value="Search" />
-          </form>
-        </section>
-        <section class="header-dropdown-and-cart">
-          <button class="button">cart (0)</button>
-          <button class="button">login</button>
-          <div class="header-dropdown">
-            <button class="button categories-button">Categories</button>
-            <ul>
-              <li><a href="category.html?category=Classics">Classics</a></li>
-              <li><a href="category.html?category=Fantasy">Fantasy</a></li>
-              <li><a href="category.html?category=Mystery">Mystery</a></li>
-              <li><a href="category.html?category=Romance">Romance</a></li>
-            </ul>
-          </div>
-        </section>
-      </header>
-      <div class="home-page">
-        <section class="welcome-text flow-content container dark-background">
-          <h2>Welcome to Another Bookstore</h2>
-          <p>
-            Another Bookstore is a client-side application written in HTML and
-            CSS.
-          </p>
-          <p>
-            It includes a home page and a category page. Both pages have the
-            same header and footer.
-          </p>
-          <p>
-            You can navigate to the category page by choosing any category from
-            the dropdown menu in the header. You can navigate to the home page
-            by clicking on the logo in the header.
-          </p>
-          <p>Take some time and explore the code.</p>
-        </section>
-        <section class="category-images container">
-          <div class="category-image-items">
-            <a>
-              <img
-                src="images/categories/classics.jpg"
-                alt="Classics category"
-                width="180px"
-                height="180px"
-              />
-              <div>Classics</div>
-            </a>
-            <a>
-              <img
-                src="images/categories/fantasy.jpg"
-                alt="Fantasy category"
-                width="180px"
-                height="180px"
-              />
-              <div>Fantasy</div>
-            </a>
-            <a>
-              <img
-                src="images/categories/mystery.jpg"
-                alt="Mystery category"
-                width="180px"
-                height="180px"
-              />
-              <div>Mystery</div>
-            </a>
-            <a>
-              <img
-                src="images/categories/romance.jpg"
-                alt="Romance category"
-                width="180px"
-                height="180px"
-              />
-              <div>Romance</div>
-            </a>
-          </div>
-        </section>
+    .section-heading {
+      text-align: center;
+      font-size: 2.1em;
+      margin: 50px 0 20px;
+      font-family: Georgia, serif;
+    }
+
+    .image-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 20px 40px;
+    }
+
+    .image-box {
+      width: 200px;
+      text-align: center;
+      font-family: Georgia, serif;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-box span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #4A4A4A;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+    }
+
+    .social-icons img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img alt="Logo" src="images/site/logo.png" style="height:60px;" />
+        <span style="font-size:1.8em;">Chapter &amp; Quill</span>
       </div>
-      <footer class="container">
-        <section class="links">
-          <a href="index.html">about</a>
-          <a href="index.html">contact</a>
-          <a href="index.html">directions</a>
-        </section>
-        <section class="social-media-icons">
-          <a class="button">Facebook</a>
-          <a class="button">Twitter</a>
-        </section>
-      </footer>
-    </main>
-  </body>
+      <div class="search-box">
+        <div class="category-select">
+          <select>
+            <option>Categories</option>
+            <option>Fantasy</option>
+            <option>History</option>
+            <option>Mystery</option>
+            <option>Romance</option>
+            <option>New Releases</option>
+            <option>Best Sellers</option>
+            <option>Staff Picks</option>
+          </select>
+        </div>
+        <input placeholder="Search by Title, Author, or ISBN" type="text" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div class="auth-button">
+        <button>
+          <i class="fas fa-user"></i>
+          Hello, Devon
+        </button>
+      </div>
+      <div class="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-label">Cart</span>
+        <span class="cart-count">3</span>
+      </div>
+      <input id="hamburger-toggle" type="checkbox" />
+      <label class="hamburger" for="hamburger-toggle">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div class="hamburger-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="category.html">Categories</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <nav class="category-nav">
+      <button class="category-button active">Home Page</button>
+      <button class="category-button">New Releases</button>
+      <button class="category-button">Best Sellers</button>
+      <button class="category-button">Staff Picks</button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Welcome to Chapter &amp; Quill</h1>
+        <p>Discover your next favorite read from our thoughtfully curated collection.</p>
+        <button class="cta-button" onclick="location.href='category.html'">Shop for Books</button>
+      </div>
+    </section>
+
+    <h2 class="section-heading">Explore Popular Categories</h2>
+    <div class="image-grid">
+      <div class="image-box">
+        <img alt="Fantasy" src="images/categories/Fantasy.png" />
+        <span>Fantasy</span>
+      </div>
+      <div class="image-box">
+        <img alt="History" src="images/categories/History.png" />
+        <span>History</span>
+      </div>
+      <div class="image-box">
+        <img alt="Mystery" src="images/categories/Mystery.png" />
+        <span>Mystery</span>
+      </div>
+      <div class="image-box">
+        <img alt="Romance" src="images/categories/Romance.png" />
+        <span>Romance</span>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Featured Books</h2>
+    <div class="book-grid">
+      <div class="book-box">
+        <img alt="Book 1" src="images/books/Things_They_Carried.jpg" />
+        <h4>The Things They Carried</h4>
+        <p>by Tim O'Brien</p>
+        <p class="price">$12.99</p>
+        <button class="btn add-cart">Add to Cart</button>
+      </div>
+      <div class="book-box">
+        <img alt="Book 2" src="images/books/Oddessy.jpg" />
+        <h4>The Odyssey</h4>
+        <p>by Homer</p>
+        <p class="price">$9.49</p>
+        <button class="btn add-cart">Add to Cart</button>
+      </div>
+      <div class="book-box">
+        <img alt="Book 3" src="images/books/Beloved.jpg" />
+        <h4>Beloved</h4>
+        <p>by Toni Morrison</p>
+        <p class="price">$11.79</p>
+        <button class="btn add-cart">Add to Cart</button>
+      </div>
+      <div class="book-box">
+        <img alt="Book 4" src="images/books/To_Kill_A_Mockinbird.jpg" />
+        <h4>To Kill a Mockingbird</h4>
+        <p>by Harper Lee</p>
+        <p class="price">$10.25</p>
+        <button class="btn add-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <section style="text-align:center; padding:40px 20px; background:#fdfaf5; font-family:Georgia, serif;">
+      <blockquote style="font-size:1.5em; font-style:italic; color:#8B2E3C; margin-bottom:20px;">
+        “A room without books is like a body without a soul.” – Cicero
+      </blockquote>
+      <p style="margin-bottom:12px; font-size:1em;">Subscribe to our monthly picks</p>
+      <input placeholder="Your email address" type="email" style="padding:10px; width:250px; border-radius:25px; border:1px solid #ccc;" />
+      <button style="padding:10px 20px; border:none; border-radius:25px; background:#8B2E3C; color:white; margin-left:10px;">Subscribe</button>
+    </section>
+  </main>
+
+  <footer style="background:#f0ede5; text-align:center; padding:20px; font-family:Georgia, serif; border-top:1px solid #ccc;">
+    <p>&copy; 2025 Chapter &amp; Quill. All rights reserved.</p>
+    <p>
+      <a href="contact_page.html">Contact</a> |
+      <a href="directions_page.html">Directions</a>
+    </p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="images/social/Facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="images/social/Twitter.png" alt="Twitter" />
+      </a>
+      <a href="https://www.youtube.com" target="_blank">
+        <img src="images/social/YouTube.png" alt="YouTube" />
+      </a>
+      <a href="https://bsky.app" target="_blank">
+        <img src="images/social/Bluesky.png" alt="Bluesky" />
+      </a>
+    </div>
+  </footer>
+</body>
 </html>
