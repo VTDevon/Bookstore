@@ -8,48 +8,58 @@
 </head>
 <body>
   <header>
-    <div class="logo" style="display:flex; align-items:center; gap:12px;">
-      <img alt="Logo" src="images/site/logo.png" style="height:60px;" />
-      <span style="font-size:1.8em;">Chapter &amp; Quill</span>
-    </div>
+      <div class="logo" style="display:flex; align-items:center; gap:12px;">
+        <img alt="Logo" src="images/site/logo.png" style="height:60px;" />
+        <span style="font-size:1.8em;">Chapter &amp; Quill</span>
+      </div>
 
-    <!-- <div class="categories-menu">
-      <button class="categories-btn"><i class="fas fa-book-open"></i> Categories</button>
-      <ul class="dropdown">
-        <li><a href="new_releases_page.html">New Releases</a></li>
-        <li><a href="best_sellers_page.html">Best Sellers</a></li>
-        <li><a href="staff_picks_page.html">Staff Picks</a></li>
-      </ul>
-    </div> -->
+      <div class="search-box">
+        <form action="category.html" method="get" class="category-select">
+          <select name="category" required onchange="this.form.submit()">
+            <option value="" selected disabled hidden>Categories</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="History">History</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="New Releases">New Releases</option>
+            <option value="Best Sellers">Best Sellers</option>
+            <option value="Staff Picks">Staff Picks</option>
+          </select>
+        </form>
 
-    <div class="search-box">
-      <input placeholder="Search by Title, Author, or ISBN" type="text" />
-      <i class="fas fa-search"></i>
-    </div>
+        <input placeholder="Search by Title, Author, or ISBN" type="text" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
 
-    <div class="auth-button">
-      <button><i class="fas fa-user"></i> Hello, Devon</button>
-    </div>
+      <div class="auth-button">
+        <button>
+          <i class="fas fa-user"></i>
+          Hello, Devon
+        </button>
+      </div>
 
-    <div class="cart-button">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-label">Cart</span>
-      <span class="cart-count">3</span>
-    </div>
+      <div class="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-label">Cart</span>
+        <span class="cart-count">3</span>
+      </div>
 
+      <input id="hamburger-toggle" type="checkbox" />
+      <label class="hamburger" for="hamburger-toggle">
+        <i class="fas fa-bars"></i>
+      </label>
 
-    <input id="hamburger-toggle" type="checkbox" />
-    <label class="hamburger" for="hamburger-toggle"><i class="fas fa-bars"></i></label>
-
-    <div class="hamburger-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="category.html">Categories</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Account</a></li>
-      </ul>
-    </div>
-  </header>
+      <div class="hamburger-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="category.html">Categories</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+    </header>
 
   <nav class="category-nav">
     <button class="category-button">Home Page</button>

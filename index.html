@@ -123,39 +123,45 @@
         <img alt="Logo" src="images/site/logo.png" style="height:60px;" />
         <span style="font-size:1.8em;">Chapter &amp; Quill</span>
       </div>
+
       <div class="search-box">
-        <div class="category-select">
-          <select>
-            <option>Categories</option>
-            <option>Fantasy</option>
-            <option>History</option>
-            <option>Mystery</option>
-            <option>Romance</option>
-            <option>New Releases</option>
-            <option>Best Sellers</option>
-            <option>Staff Picks</option>
+        <form action="category.html" method="get" class="category-select">
+          <select name="category" required onchange="this.form.submit()">
+            <option value="" selected disabled hidden>Categories</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="History">History</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="New Releases">New Releases</option>
+            <option value="Best Sellers">Best Sellers</option>
+            <option value="Staff Picks">Staff Picks</option>
           </select>
-        </div>
+        </form>
+
         <input placeholder="Search by Title, Author, or ISBN" type="text" />
         <button class="search-button">
           <i class="fas fa-search"></i>
         </button>
       </div>
+
       <div class="auth-button">
         <button>
           <i class="fas fa-user"></i>
           Hello, Devon
         </button>
       </div>
+
       <div class="cart-button">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-label">Cart</span>
         <span class="cart-count">3</span>
       </div>
+
       <input id="hamburger-toggle" type="checkbox" />
       <label class="hamburger" for="hamburger-toggle">
         <i class="fas fa-bars"></i>
       </label>
+
       <div class="hamburger-menu">
         <ul>
           <li><a href="index.html">Home</a></li>

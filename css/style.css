@@ -384,9 +384,14 @@ header {
   padding: 0;
 }
 
+.category-select {
+  position: relative;
+  display: inline-block;
+}
+
 .category-select select {
   background-color: white;
-  color: #2E2E2E;  /* Dark text */
+  color: #2E2E2E;
   font-family: Georgia, serif;
   font-size: 1em;
   font-weight: bold;
@@ -396,10 +401,8 @@ header {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  cursor: pointer;
 }
-
-
-
 
 .category-select select:hover {
   cursor: pointer;
@@ -407,7 +410,7 @@ header {
 
 .search-box input {
   padding: 8px 14px;
-  color: #4A4A4A
+  color: #4A4A4A;
   border: none;
   font-family: Georgia, serif;
   font-size: 0.95em;
